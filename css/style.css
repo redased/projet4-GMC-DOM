@@ -1,0 +1,64 @@
+* {
+    height: 100vh;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*body {
+    height: 150vh;
+    width:300vw;
+}
+
+
+.container {
+    height: 500px;
+    width: 500px;
+    border: dotted green 4px;
+   
+  
+}
+
+.box1 {
+    height:100px;
+    width:100px;
+    background-color: slateblue;
+    
+ 
+ 
+}
+
+.box2 {
+    height:100px;
+    width:100px;
+    background-color: greenyellow;
+    position: relative;
+    top: 30px;
+    position: sticky;
+    top:0;
+    left:0;
+    
+   
+}
+
+ /*aspect-ratio: 1;*/

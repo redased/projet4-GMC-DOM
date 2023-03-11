@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+#banner {
+    height: 80vh;
+    background-image: url(../res/img/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.main-ttl-container{
+/*   margin-left: 70%;
+    margin-top: 20%;*/
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+.main-ttl-sm {
+ color: black;
+ font-size: 30px;
+
+ background-image:
+    linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 90%,
+        hotpink 90%,
+        hotpink 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    
+    transition: background-size 300ms;
+}
+
+.main-ttl-sm:hover{
+    background-size:  100% 10%;
+    background-position-x: left;
+}
+.main-ttl-lg{
+    color:black;
+    font-size:35px;
+}
+
+.order-btn{
+    color:black;
+    font-size: 22px;
+    background-color: transparent;
+    border: 2px solid darkolivegreen;
+    height: 50px;
+    width: 100px;
+    
+    
+}
+
+.order-btn:hover{
+    background-color: rgba(150, 209, 189, 0.623);
+
+}
+
+.order-btn:active{
+    background-color: transparent;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+#products {
+   height: 200vh;
+   background-color: #ce8d4d;
+}
+
+.card {
+    height: 600px;
+    width:400px;
+    background-color: #ca792d;
+   
+}
+.center-card {
+    display:grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    justify-self: stretch;
+    width: auto;
+  }
+/*.cards {
+    display: flex;
+    /*overflow-x: scroll; not needed for flex
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}*/
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 20px;
+    justify-content: center;
+}
+.prod-img {
+   height: 430px;
+  }
+
+  .img-container {
+    text-align:  center;
+  }
+
+  .prod-details {
+    text-align: left;
+    max-width: calc(100% - 45px);
+    margin: 10px 40px;
+  }
+
+  .prod-name {
+    color: whitesmoke;
+    font-size: 22px;
+  }
+
+  .prod-discription {
+    color: whitesmoke;
+    font-size: 22px;
+    margin: 10px 40px;
+  }
+  
