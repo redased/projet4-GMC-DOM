@@ -108,19 +108,16 @@
 // }
 
 var prod1 = {
-  name: "Lait",
-  expired: true,
-  price: 140,
+  name: "Arabica coffee",
+  price: 1400,
   qty: 400,
   sell: function (qty) {
-    if (this.expired) {
-      product_select.innerHTML = "This product is expired";
-      return 0;
-    } else {
-      product_select.innerHTML = `${this.name}:${this.price}`;
-      this.qty = this.qty - qty;
-      return this.price * qty;
-    }
+    this.qty = this.qty - qty;
+    return this.price * qty;
+  },
+  minus: function (qty) {
+    this.qty = this.qty + qty;
+    return this.price * qty;
   },
 };
 
@@ -190,4 +187,80 @@ function showProduct() {
   // product_select.innerHTML = `${prodCode.value} : ${prods[prodCode-1].name} AND  Price${prods[procCode-1].price} : `;
   total += prods[prodCode.value - 1].sell(prodQty.value);
   product_total_price.innerHTML = total;
+}
+
+var heart = document.querySelector(".heart");
+
+function heartRed() {
+  document.getElementById("heart").src = "res/icone/coeur_rouge_32px.png";
+  document
+    .getElementById("heart")
+    .setAttribute("onclick", "heartTransparent()");
+}
+
+function heartTransparent() {
+  document.getElementById("heart").src = "res/icone/coeur_32px.png";
+  document.getElementById("heart").setAttribute("onclick", "heartRed()");
+}
+
+var add_coffee1 = document.querySelector(".add_coffee1");
+var minus_coffee1 = document.querySelector(".minus_coffee1");
+var panier_total = document.querySelector(".panier_total");
+
+var caisse_total = document.querySelector(".caisse_total");
+function addCoffee1() {
+  add_coffee1.src = "res/icone/plus.png";
+  add_coffee1.setAttribute("onclick", "addCoffee1Transparent()");
+  total_panier = Number(panier_total.value) + 1;
+  panier_total.value = total_panier;
+
+  total_caisse = prods[0].sell(total_panier);
+
+  total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
+
+  caisse_total.value = total_caisse_2 + " DA";
+}
+
+function addCoffee1Transparent() {
+  add_coffee1.src = "res/icone/plus_black.png";
+  add_coffee1.setAttribute("onclick", "addCoffee1()");
+
+  total_panier = Number(panier_total.value) + 1;
+  panier_total.value = total_panier;
+
+  total_caisse = prods[0].sell(total_panier);
+
+  total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
+
+  caisse_total.value = total_caisse_2 + " DA";
+}
+
+function minusCoffee1() {
+  minus_coffee1.src = "res/icone/minus-sign.png";
+  minus_coffee1.setAttribute("onclick", "minusCoffee1Transparent()");
+  if (Number(panier_total.value) > 0) {
+    total_panier = Number(panier_total.value) - 1;
+    panier_total.value = total_panier;
+
+    total_caisse = prods[0].minus(total_panier);
+
+    total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
+
+    caisse_total.value = total_caisse_2 + " DA";
+  }
+}
+
+function minusCoffee1Transparent() {
+  minus_coffee1.src = "res/icone/minus.png";
+  minus_coffee1.setAttribute("onclick", "minusCoffee1()");
+  if (Number(panier_total.value) > 0) {
+    total_panier = Number(panier_total.value) - 1;
+    panier_total.value = total_panier;
+
+    total_caisse = prods[0].minus(total_panier);
+
+    total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
+
+    caisse_total.value = total_caisse_2 + " DA";
+  }
 }

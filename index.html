@@ -1,114 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <script src="js/main.js" defer></script>
     <header id="banner">
-        <nav class="navigation">
-            <a href="index.html"><img id="nav-logo" src="res/img/png-clipart-coffee-cup-tea-cafe-mug-coffee-in-cup-logo-painted-simple-removebg-preview.png" alt="coffee-logo"></a>
-            <ul class="nav-items">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Order</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="main-ttl-container">
-            <span class="material-symbols-outlined">
-               
-                <p class="main-ttl-sm">Enjoy your coffee at the work</p></span>
-            <p class="main-ttl-lg">Drink your coffee hot</p>
-            <button class="order-btn">Order</button>
-        </div>
+      <nav class="navigation" id="nav-bar">
+        <a href="index.html"
+          ><img
+            id="nav-logo"
+            src="res/img/png-clipart-coffee-cup-tea-cafe-mug-coffee-in-cup-logo-painted-simple-removebg-preview.png"
+            alt="coffee-logo"
+        /></a>
+        <ul class="nav-items">
+          <li class="nav-item"></li>
+          <li class="nav-item"></li>
+          <li class="nav-item">
+            <img src="res/icone/panier.png" alt="" id="panier" />
+            <input
+              type="text"
+              class="panier_total"
+              id="panier_total"
+              value="0"
+              readonly
+            />
+          </li>
+          <li class="nav-item">
+            <img src="res/icone/caisse-enregistreuse.png" alt="" id="caisse" />
+            <input
+              type="text"
+              class="caisse_total"
+              id="caisse_total"
+              value="0.00 DA"
+              readonly
+            />
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section id="products">
-            <div class="cards">
-                <div class="card">
-                <div class="img-container">
-                    <img class="prod-img" src="res/img/coffee3.png" alt="">
-                </div>
-                <div class="prod-details">
-                    <h3 class="prod-name">Coffee</h3>
-                    <p class="prod-discription">A cold coffee with different variety</p>
-                    <button class="order-btn">Order</button>
-                </div>
-                </div>
-
-
-                <div class="card">
-                    <div class="img-container">
-                        <img class="prod-img" src="res/img/coffee3-2.png" alt="">
-                    </div>
-                    <div class="prod-details">
-                        <h3 class="prod-name">Coffee</h3>
-                        <p class="prod-discription">A cold coffee with different variety</p>
-                        <button class="order-btn">Order</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img-container">
-                        <img class="prod-img" src="res/img/coffee3.png" alt="">
-                    </div>
-                    <div class="prod-details">
-                        <h3 class="prod-name">Coffee</h3>
-                        <p class="prod-discription">A cold coffee with different variety</p>
-                        <button class="order-btn">Order</button>
-                    </div>
-                    </div>
-                    <div class="card">
-                        <div class="img-container">
-                            <img class="prod-img" src="res/img/coffee3-2.png" alt="">
-                        </div>
-                        <div class="prod-details">
-                            <h3 class="prod-name">Coffee</h3>
-                            <p class="prod-discription">A cold coffee with different variety</p>
-                            <button class="order-btn">Order</button>
-                        </div>
-                    </div>
-
-                    <div class="card center-card">
-                        <div class="img-container">
-                            <img class="prod-img" src="res/img/coffee3.png" alt="">
-                        </div>
-                        <div class="prod-details">
-                            <h3 class="prod-name">Coffee</h3>
-                            <p class="prod-discription">A cold coffee with different variety</p>
-                            <button class="order-btn">Order</button>
-                        </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-container">
-                                <img class="prod-img" src="res/img/coffee3-2.png" alt="">
-                            </div>
-                            <div class="prod-details">
-                                <h3 class="prod-name">Coffee</h3>
-                                <p class="prod-discription">A cold coffee with different variety</p>
-                                <button class="order-btn">Order</button>
-                            </div>
-                        </div>
-
-                        <div class="card ">
-                            <div class="img-container">
-                                <img class="prod-img" src="res/img/coffee3.png" alt="">
-                            </div>
-                            <div class="prod-details">
-                                <h3 class="prod-name">Coffee</h3>
-                                <p class="prod-discription">A cold coffee with different variety</p>
-                                <button class="order-btn">Order</button>
-                            </div>
-                            </div>
-                           
+      <section id="products">
+        <div class="cards">
+          <div class="card">
+            <div class="img-container">
+              <img
+                class="prod-img"
+                src="res/img/arabica.jpg"
+                alt=""
+                style="width: 200px; height: 300px"
+              />
             </div>
-        </section>
+            <div class="prod-details">
+              <h3 class="prod-name">Arabica</h3>
+              <p class="prod-discription">18 pieces</p>
+              <div class="prodAddMinus">
+                <img
+                  src="res/icone/coeur_32px.png"
+                  alt=""
+                  class="heart"
+                  id="heart"
+                  onclick="heartRed()"
+                />
+                <img
+                  src="res/icone/minus.png"
+                  alt=""
+                  class="minus_coffee1"
+                  id="minus_coffee1"
+                  onclick="minusCoffee1()"
+                />
+                <img
+                  src="res/icone/plus_black.png"
+                  alt=""
+                  class="add_coffee1"
+                  id="add_coffee1"
+                  onclick="addCoffee1()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-container">
+              <img
+                class="arabica-img"
+                src="res/img/arabica2.png"
+                alt=""
+                id="arabica-img"
+              />
+            </div>
+            <div class="prod-details">
+              <h3 class="prod-name">Coffee</h3>
+              <p class="prod-discription">
+                A cold coffee with different variety
+              </p>
+              <button class="order-btn">Order</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-container">
+              <img class="prod-img" src="res/img/coffee3.png" alt="" />
+            </div>
+            <div class="prod-details">
+              <h3 class="prod-name">Coffee</h3>
+              <p class="prod-discription">
+                A cold coffee with different variety
+              </p>
+              <button class="order-btn">Order</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-container">
+              <img class="prod-img" src="res/img/coffee3-2.png" alt="" />
+            </div>
+            <div class="prod-details">
+              <h3 class="prod-name">Coffee</h3>
+              <p class="prod-discription">
+                A cold coffee with different variety
+              </p>
+              <button class="order-btn">Order</button>
+            </div>
+          </div>
+
+          <div class="card center-card">
+            <div class="img-container">
+              <img class="prod-img" src="res/img/coffee3.png" alt="" />
+            </div>
+            <div class="prod-details">
+              <h3 class="prod-name">Coffee</h3>
+              <p class="prod-discription">
+                A cold coffee with different variety
+              </p>
+              <button class="order-btn">Order</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-container">
+              <img class="prod-img" src="res/img/coffee3-2.png" alt="" />
+            </div>
+            <div class="prod-details">
+              <h3 class="prod-name">Coffee</h3>
+              <p class="prod-discription">
+                A cold coffee with different variety
+              </p>
+              <button class="order-btn">Order</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img-container">
+              <img class="prod-img" src="res/img/coffee3.png" alt="" />
+            </div>
+            <div class="prod-details">
+              <h3 class="prod-name">Coffee</h3>
+              <p class="prod-discription">
+                A cold coffee with different variety
+              </p>
+              <button class="order-btn">Order</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    
-</body>
+  </body>
 </html>
+
+<script>
+  window.onscroll = function () {
+    myFunction();
+  };
+
+  var header = document.getElementById("banner");
+  var sticky = header.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+</script>

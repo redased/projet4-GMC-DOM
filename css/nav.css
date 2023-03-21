@@ -1,36 +1,59 @@
 .navigation {
-    height: 80px;
-    background-color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+  height: 80px;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
+.sticky + .content {
+  padding-top: 100px;
+}
+
+.sticky > .change-color {
+  display: block;
+}
 #nav-logo {
-    height: 70px;
-    width:auto;
-    margin-left: 100px;
-
+  height: 70px;
+  width: auto;
+  margin-left: 100px;
 }
 
-.nav-items{
-    list-style: none;
-    display: flex;
-    margin-right: 100px;
-    /*gap: 20px;*/
-
+.nav-items {
+  list-style: none;
+  display: flex;
+  margin-right: 100px;
+  /*gap: 20px;*/
 }
 
 .nav-item {
-    padding: 16px;
+  padding: 16px;
 }
 
-.nav-item:hover{
-    background-color: rgba(221, 218, 224, 0.386);
+.nav-item:hover {
+  background-color: rgba(221, 218, 224, 0.386);
 }
-.nav-link{
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.panier_total {
+  background: transparent;
+  border: none;
+  width: 60px;
+  font-size: larger;
+}
+
+.caisse_total {
+  background: transparent;
+  border: none;
+  width: 150px;
+  font-size: larger;
 }
