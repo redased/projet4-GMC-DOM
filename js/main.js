@@ -235,6 +235,8 @@ function addCoffee1() {
   if (nbr_arabica == 0) {
     nbr_arabica += 1;
     cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+  } else {
+    var arabica_item = document.querySelector;
   }
 }
 
