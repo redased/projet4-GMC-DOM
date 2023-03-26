@@ -26,7 +26,12 @@
           <li class="nav-item"></li>
           <li class="nav-item"></li>
           <li class="nav-item">
-            <img src="res/icone/panier.png" alt="" id="panier" />
+            <img
+              src="res/icone/panier.png"
+              alt=""
+              id="panier"
+              onclick="cart_sidebar_open()"
+            />
             <input
               type="text"
               class="panier_total"
@@ -48,6 +53,11 @@
         </ul>
       </nav>
     </header>
+    <div class="cart_sidebar" id="cart_sidebar">
+      <div class="cart_article">
+        <a class="product_item">Pas d'articles</a>
+      </div>
+    </div>
     <main>
       <section id="products">
         <div class="cards">
@@ -78,6 +88,12 @@
                   id="minus_coffee1"
                   onclick="minusCoffee1()"
                 />
+                <!--  <input
+                  type="number"
+                  class="qte_coffee1"
+                  value="0"
+                  id="qte_coffee1"
+                />-->
                 <img
                   src="res/icone/plus_black.png"
                   alt=""

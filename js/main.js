@@ -207,8 +207,16 @@ var add_coffee1 = document.querySelector(".add_coffee1");
 var minus_coffee1 = document.querySelector(".minus_coffee1");
 var panier_total = document.querySelector(".panier_total");
 
+var product_item = document.querySelector(".product_item");
 var caisse_total = document.querySelector(".caisse_total");
+
+var cart_article = document.querySelector(".cart_article");
+nbr_product = 0;
+nbr_arabica = 0;
+total_arabica = 0;
 function addCoffee1() {
+  nbr_product += 1;
+
   add_coffee1.src = "res/icone/plus.png";
   add_coffee1.setAttribute("onclick", "addCoffee1Transparent()");
   total_panier = Number(panier_total.value) + 1;
@@ -217,8 +225,17 @@ function addCoffee1() {
   total_caisse = prods[0].sell(total_panier);
 
   total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
-
+  total_arabica_caisse = total_caisse_2;
   caisse_total.value = total_caisse_2 + " DA";
+
+  product = prods[0].name;
+
+  product_item.remove();
+
+  if (nbr_arabica == 0) {
+    nbr_arabica += 1;
+    cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+  }
 }
 
 function addCoffee1Transparent() {
@@ -263,4 +280,14 @@ function minusCoffee1Transparent() {
 
     caisse_total.value = total_caisse_2 + " DA";
   }
+}
+var panier = document.getElementById("panier");
+var sidebar = document.getElementById("cart_sidebar");
+function cart_sidebar_open() {
+  sidebar.style.display = "block";
+  panier.setAttribute("onclick", "cart_sidebar_close()");
+}
+function cart_sidebar_close() {
+  sidebar.style.display = "none";
+  panier.setAttribute("onclick", "cart_sidebar_open()");
 }
