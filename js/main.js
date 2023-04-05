@@ -355,9 +355,11 @@ function addCoffee2() {
   
   if (nbr_arabica == 0) {
     nbr_arabica += 1;
-    cart_article.innerHTML = `<a class="product_item_arabica2">${product} : ${nbr_arabica2} : ${total_arabica2_caisse}</a><br>
+    cart_article.innerHTML = `<li><a class="product_item_arabica2">${product} : ${nbr_arabica2} : ${total_arabica2_caisse}</a><br>
                               <a class="product_item_arabica1"></a><br>
-                               <a class="product_item_arabica3"></a>`;
+                               <a class="product_item_arabica3"></a>
+                               
+                                </li>`;
   } else {
     var arabica_item2 = document.querySelector(".product_item_arabica2");
     nbr_arabica=panier_arabica_total;
