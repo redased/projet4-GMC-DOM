@@ -50,6 +50,7 @@
               readonly
             />
           </li>
+          <button class="order-btn">Order</button>
         </ul>
       </nav>
     </header>
@@ -108,82 +109,91 @@
           <div class="card">
             <div class="img-container">
               <img
-                class="arabica-img"
-                src="res/img/arabica2.png"
+                class="prod-img"
+                src="res/img/arabica_organic.jpg"
                 alt=""
-                id="arabica-img"
+                style="width: 200px; height: 300px"
               />
             </div>
             <div class="prod-details">
-              <h3 class="prod-name">Coffee</h3>
-              <p class="prod-discription">
-                A cold coffee with different variety
-              </p>
-              <button class="order-btn">Order</button>
+              <h3 class="prod-name">Arabica Organic</h3>
+              <p class="prod-discription">18 pieces</p>
+              <div class="prodAddMinus">
+                <img
+                  src="res/icone/coeur_32px.png"
+                  alt=""
+                  class="heart2"
+                  id="heart2"
+                  onclick="heartRed2()"
+                />
+                <img
+                  src="res/icone/minus.png"
+                  alt=""
+                  class="minus_coffee2"
+                  id="minus_coffee2"
+                  onclick="minusCoffee2()"
+                />
+                <!--  <input
+                  type="number"
+                  class="qte_coffee1"
+                  value="0"
+                  id="qte_coffee1"
+                />-->
+                <img
+                  src="res/icone/plus_black.png"
+                  alt=""
+                  class="add_coffee2"
+                  id="add_coffee2"
+                  onclick="addCoffee2()"
+                />
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="img-container">
-              <img class="prod-img" src="res/img/coffee3.png" alt="" />
+              <img
+                class="prod-img"
+                src="res/img/arabica_finissia.jpg"
+                alt=""
+                style="width: 200px; height: 300px"
+              />
             </div>
             <div class="prod-details">
-              <h3 class="prod-name">Coffee</h3>
-              <p class="prod-discription">
-                A cold coffee with different variety
-              </p>
-              <button class="order-btn">Order</button>
+              <h3 class="prod-name">Arabica Finissia</h3>
+              <p class="prod-discription">18 pieces</p>
+              <div class="prodAddMinus">
+                <img
+                  src="res/icone/coeur_32px.png"
+                  alt=""
+                  class="heart"
+                  id="heart"
+                  onclick="heartRed()"
+                />
+                <img
+                  src="res/icone/minus.png"
+                  alt=""
+                  class="minus_coffee1"
+                  id="minus_coffee1"
+                  onclick="minusCoffee1()"
+                />
+                <!--  <input
+                  type="number"
+                  class="qte_coffee1"
+                  value="0"
+                  id="qte_coffee1"
+                />-->
+                <img
+                  src="res/icone/plus_black.png"
+                  alt=""
+                  class="add_coffee1"
+                  id="add_coffee1"
+                  onclick="addCoffee1()"
+                />
+              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="img-container">
-              <img class="prod-img" src="res/img/coffee3-2.png" alt="" />
-            </div>
-            <div class="prod-details">
-              <h3 class="prod-name">Coffee</h3>
-              <p class="prod-discription">
-                A cold coffee with different variety
-              </p>
-              <button class="order-btn">Order</button>
-            </div>
-          </div>
-
-          <div class="card center-card">
-            <div class="img-container">
-              <img class="prod-img" src="res/img/coffee3.png" alt="" />
-            </div>
-            <div class="prod-details">
-              <h3 class="prod-name">Coffee</h3>
-              <p class="prod-discription">
-                A cold coffee with different variety
-              </p>
-              <button class="order-btn">Order</button>
-            </div>
-          </div>
-          <div class="card">
-            <div class="img-container">
-              <img class="prod-img" src="res/img/coffee3-2.png" alt="" />
-            </div>
-            <div class="prod-details">
-              <h3 class="prod-name">Coffee</h3>
-              <p class="prod-discription">
-                A cold coffee with different variety
-              </p>
-              <button class="order-btn">Order</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="img-container">
-              <img class="prod-img" src="res/img/coffee3.png" alt="" />
-            </div>
-            <div class="prod-details">
-              <h3 class="prod-name">Coffee</h3>
-              <p class="prod-discription">
-                A cold coffee with different variety
-              </p>
-              <button class="order-btn">Order</button>
-            </div>
-          </div>
+         
+         
         </div>
       </section>
     </main>

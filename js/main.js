@@ -108,7 +108,7 @@
 // }
 
 var prod1 = {
-  name: "Arabica coffee",
+  name: "Arabica",
   price: 1400,
   qty: 400,
   sell: function (qty) {
@@ -122,36 +122,32 @@ var prod1 = {
 };
 
 var prod2 = {
-  name: "Soda",
-  price: 100,
+  name: "Arabica Organic",
+  price: 1700,
   expired: false,
   qty: 200,
   sell: function (qty) {
-    if (this.expired) {
-      product_select.innerHTML = "This product is expired";
-      return 0;
-    } else {
-      product_select.innerHTML = `${this.name}:${this.price}`;
-      this.qty = this.qty - qty;
-      return this.price * qty;
-    }
+    this.qty = this.qty - qty;
+    return this.price * qty;
+  },
+  minus: function (qty) {
+    this.qty = this.qty + qty;
+    return this.price * qty;
   },
 };
 
 var prod3 = {
-  name: "Eau",
-  price: 220,
+  name: "Arabica Finissia",
+  price: 1900,
   expired: true,
   qty: 150,
   sell: function (qty) {
-    if (this.expired) {
-      product_select.innerHTML = "This product is expired";
-      return 0;
-    } else {
-      product_select.innerHTML = `${this.name}:${this.price}`;
-      this.qty = this.qty - qty;
-      return this.price * qty;
-    }
+    this.qty = this.qty - qty;
+    return this.price * qty;
+  },
+  minus: function (qty) {
+    this.qty = this.qty + qty;
+    return this.price * qty;
   },
 };
 
@@ -191,17 +187,29 @@ function showProduct() {
 
 var heart = document.querySelector(".heart");
 
+
 function heartRed() {
-  document.getElementById("heart").src = "res/icone/coeur_rouge_32px.png";
-  document
-    .getElementById("heart")
-    .setAttribute("onclick", "heartTransparent()");
+  heart.src = "res/icone/coeur_rouge_32px.png";
+  heart.setAttribute("onclick", "heartTransparent()");
 }
 
 function heartTransparent() {
   document.getElementById("heart").src = "res/icone/coeur_32px.png";
   document.getElementById("heart").setAttribute("onclick", "heartRed()");
 }
+
+var heart2 = document.querySelector(".heart2");
+function heartRed2() {
+  heart2.src = "res/icone/coeur_rouge_32px.png";
+heart2.setAttribute("onclick", "heartTransparent2()");
+}
+
+function heartTransparent2() {
+  heart2.src = "res/icone/coeur_32px.png";
+  heart2.setAttribute("onclick", "heartRed2()");
+}
+
+
 
 var add_coffee1 = document.querySelector(".add_coffee1");
 var minus_coffee1 = document.querySelector(".minus_coffee1");
@@ -214,6 +222,7 @@ var cart_article = document.querySelector(".cart_article");
 nbr_product = 0;
 nbr_arabica = 0;
 total_arabica = 0;
+
 function addCoffee1() {
   nbr_product += 1;
 
@@ -234,9 +243,13 @@ function addCoffee1() {
   
   if (nbr_arabica == 0) {
     nbr_arabica += 1;
-    cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+    cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>
+                               <a class="product_item_arabica2"></a>
+                               <a class="product_item_arabica3"></a>`;
   } else {
-    var arabica_item = document.querySelector;
+    var arabica_item = document.querySelector(".product_item_arabica");
+    nbr_arabica=panier_arabica_total;
+    arabica_item.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
   }
 }
 
@@ -246,12 +259,21 @@ function addCoffee1Transparent() {
 
   total_panier = Number(panier_total.value) + 1;
   panier_total.value = total_panier;
-
+  panier_arabica_total = total_panier;
   total_caisse = prods[0].sell(total_panier);
-
+  total_arabica_caisse = total_caisse_2;
   total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
 
   caisse_total.value = total_caisse_2 + " DA";
+  if (nbr_arabica == 0) {
+    nbr_arabica += 1;
+    cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+  } else {
+    var arabica_item = document.querySelector(".product_item_arabica");
+    nbr_arabica=panier_arabica_total;
+    total_arabica_caisse=total_caisse_2;
+    arabica_item.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+  }
 }
 
 function minusCoffee1() {
@@ -260,12 +282,24 @@ function minusCoffee1() {
   if (Number(panier_total.value) > 0) {
     total_panier = Number(panier_total.value) - 1;
     panier_total.value = total_panier;
-
+    panier_arabica_total = total_panier;
     total_caisse = prods[0].minus(total_panier);
 
     total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
 
     caisse_total.value = total_caisse_2 + " DA";
+
+    if (nbr_arabica == 0) {
+      nbr_arabica -= 1;
+      cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+    } else {
+      var arabica_item = document.querySelector(".product_item_arabica");
+      nbr_arabica=panier_arabica_total;
+      total_arabica_caisse=total_caisse_2;
+      arabica_item.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+    }
+
+
   }
 }
 
@@ -275,14 +309,65 @@ function minusCoffee1Transparent() {
   if (Number(panier_total.value) > 0) {
     total_panier = Number(panier_total.value) - 1;
     panier_total.value = total_panier;
-
+    panier_arabica_total = total_panier;
     total_caisse = prods[0].minus(total_panier);
 
     total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
 
     caisse_total.value = total_caisse_2 + " DA";
+
+    if (nbr_arabica == 0) {
+      nbr_arabica -= 1;
+      cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+    } else {
+      var arabica_item = document.querySelector(".product_item_arabica");
+      nbr_arabica=panier_arabica_total;
+      total_arabica_caisse=total_caisse_2;
+      arabica_item.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
+    }
   }
 }
+
+var add_coffee2 = document.querySelector(".add_coffee2");
+var minus_coffee2 = document.querySelector(".minus_coffee2");
+
+nbr_arabica2 = 0;
+total_arabica2 = 0;
+
+
+function addCoffee2() {
+  nbr_product += 1;
+
+  add_coffee2.src = "res/icone/plus.png";
+  add_coffee2.setAttribute("onclick", "addCoffee2Transparent()");
+  total_panier = Number(panier_total.value) + 1;
+  panier_total.value = total_panier;
+  panier_arabica2_total = total_panier;
+  total_caisse = prods[1].sell(total_panier);
+
+  total_caisse_2 = caisse_total.value + (Math.round(total_caisse * 100) / 100).toFixed(2);
+  total_arabica2_caisse = total_caisse_2;
+  caisse_total.value = total_caisse_2 + " DA";
+
+  product = prods[0].name;
+
+  product_item.remove();
+  
+  if (nbr_arabica == 0) {
+    nbr_arabica += 1;
+    cart_article.innerHTML = `<a class="product_item_arabica2">${product} : ${nbr_arabica2} : ${total_arabica2_caisse}</a><br>
+                              <a class="product_item_arabica1"></a><br>
+                               <a class="product_item_arabica3"></a>`;
+  } else {
+    var arabica_item2 = document.querySelector(".product_item_arabica2");
+    nbr_arabica=panier_arabica_total;
+    arabica_item2.innerHTML = `<a class="product_item_arabica2">${product} : ${nbr_arabica2} : ${total_arabica2_caisse}</a>`;
+  }
+}
+
+
+
+
 var panier = document.getElementById("panier");
 var sidebar = document.getElementById("cart_sidebar");
 function cart_sidebar_open() {
