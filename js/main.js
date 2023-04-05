@@ -221,7 +221,7 @@ function addCoffee1() {
   add_coffee1.setAttribute("onclick", "addCoffee1Transparent()");
   total_panier = Number(panier_total.value) + 1;
   panier_total.value = total_panier;
-
+  panier_arabica_total = total_panier;
   total_caisse = prods[0].sell(total_panier);
 
   total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
@@ -231,7 +231,7 @@ function addCoffee1() {
   product = prods[0].name;
 
   product_item.remove();
-
+  
   if (nbr_arabica == 0) {
     nbr_arabica += 1;
     cart_article.innerHTML = `<a class="product_item_arabica">${product} : ${nbr_arabica} : ${total_arabica_caisse}</a>`;
