@@ -125,7 +125,7 @@
 }
 
 .prodAddMinus {
-  margin: 10px 100px;
+  margin: 10px 70px;
 }
 .arabica-img {
   width: 300px;
@@ -133,3 +133,9 @@
 }
 
 
+.qte_coffee {
+  border-radius: 10px;
+  width: 50px;
+  text-align: center;
+  font-size: 40px;
+}

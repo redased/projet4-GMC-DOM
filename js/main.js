@@ -210,7 +210,7 @@ function heartTransparent2() {
 }
 
 
-
+var qte_coffe1= document.querySelector("#qte_coffee1");
 var add_coffee1 = document.querySelector(".add_coffee1");
 var minus_coffee1 = document.querySelector(".minus_coffee1");
 var panier_total = document.querySelector(".panier_total");
@@ -231,12 +231,13 @@ function addCoffee1() {
   total_panier = Number(panier_total.value) + 1;
   panier_total.value = total_panier;
   panier_arabica_total = total_panier;
+
   total_caisse = prods[0].sell(total_panier);
 
   total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
   total_arabica_caisse = total_caisse_2;
   caisse_total.value = total_caisse_2 + " DA";
-
+  qte_coffe1.value=panier_arabica_total;
   product = prods[0].name;
 
   product_item.remove();
@@ -260,6 +261,7 @@ function addCoffee1Transparent() {
   total_panier = Number(panier_total.value) + 1;
   panier_total.value = total_panier;
   panier_arabica_total = total_panier;
+  qte_coffe1.value=panier_arabica_total;
   total_caisse = prods[0].sell(total_panier);
   total_arabica_caisse = total_caisse_2;
   total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
@@ -283,6 +285,7 @@ function minusCoffee1() {
     total_panier = Number(panier_total.value) - 1;
     panier_total.value = total_panier;
     panier_arabica_total = total_panier;
+    qte_coffe1.value=panier_arabica_total;
     total_caisse = prods[0].minus(total_panier);
 
     total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
@@ -310,6 +313,7 @@ function minusCoffee1Transparent() {
     total_panier = Number(panier_total.value) - 1;
     panier_total.value = total_panier;
     panier_arabica_total = total_panier;
+    qte_coffe1.value=panier_arabica_total;
     total_caisse = prods[0].minus(total_panier);
 
     total_caisse_2 = (Math.round(total_caisse * 100) / 100).toFixed(2);
@@ -379,4 +383,10 @@ function cart_sidebar_open() {
 function cart_sidebar_close() {
   sidebar.style.display = "none";
   panier.setAttribute("onclick", "cart_sidebar_open()");
+}
+
+var qte_coffee=document.querySelector(".qte_coffee");
+
+if(panier_arabica2_total>99){
+  qte_coffee.w
 }
