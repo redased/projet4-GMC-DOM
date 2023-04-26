@@ -44,13 +44,19 @@
   font-size: 18px;
 }
 
-.panier_total {
+.panier_total  {
   background: transparent;
   border: none;
   width: 60px;
   font-size: larger;
 }
 
+.heart_total  {
+  background: transparent;
+  border: none;
+  width: 60px;
+  font-size: larger;
+}
 .caisse_total {
   background: transparent;
   border: none;

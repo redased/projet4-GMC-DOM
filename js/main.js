@@ -185,29 +185,77 @@ function showProduct() {
   product_total_price.innerHTML = total;
 }
 
-var heart = document.querySelector(".heart");
+var likeHeart = document.querySelector("#likeHeart");
 
 
+function plusHeart(){
+  var qte_heart = document.querySelector("#heart_total");
+  qte=Number(qte_heart.value)+1;
+  qte_heart.value=qte;
+  likeHeart.src = "res/icone/coeur_rouge_32px.png";
+}
+
+
+function minusHeart(){
+  var qte_heart = document.querySelector("#heart_total");
+  qte=Number(qte_heart.value)-1;
+  if(qte>0)
+  {
+  qte_heart.value=qte;
+  
+  }
+  else{
+    qte_heart.value='0';
+    likeHeart.src = "res/icone/coeur_32px.png";
+  }
+ 
+  
+}
 function heartRed() {
   heart.src = "res/icone/coeur_rouge_32px.png";
   heart.setAttribute("onclick", "heartTransparent()");
+  plusHeart();
 }
 
 function heartTransparent() {
   document.getElementById("heart").src = "res/icone/coeur_32px.png";
   document.getElementById("heart").setAttribute("onclick", "heartRed()");
+  minusHeart();
 }
 
 var heart2 = document.querySelector(".heart2");
 function heartRed2() {
   heart2.src = "res/icone/coeur_rouge_32px.png";
 heart2.setAttribute("onclick", "heartTransparent2()");
+plusHeart();
 }
 
 function heartTransparent2() {
   heart2.src = "res/icone/coeur_32px.png";
   heart2.setAttribute("onclick", "heartRed2()");
+  minusHeart();
 }
+
+
+var heart3 = document.querySelector(".heart3");
+function heartRed3() {
+  heart3.src = "res/icone/coeur_rouge_32px.png";
+heart3.setAttribute("onclick", "heartTransparent3()");
+plusHeart();
+}
+
+function heartTransparent3() {
+  heart3.src = "res/icone/coeur_32px.png";
+  heart3.setAttribute("onclick", "heartRed3()");
+  minusHeart();
+}
+
+
+
+
+
+
+
 
 
 var qte_coffe1= document.querySelector("#qte_coffee1");
